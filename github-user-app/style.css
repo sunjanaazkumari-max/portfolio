@@ -1,0 +1,82 @@
+/* Reset default spacing */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  background-color: #f4f4f4;
+}
+
+
+h1 {
+  margin-bottom: 20px;
+}
+
+
+/* Main container (card) */
+.container {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-sizing: border-box;
+
+  max-width: 400px;
+  width: 100%;
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Input + button */
+input {
+  padding: 12px;
+  width: 65%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+input:focus {
+  outline: none;
+  border: 1px solid #007bff;
+}
+
+button {
+  padding: 12px;
+  border-radius: 5px;
+  border: none;
+
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+
+  margin-left: 10px;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+
+/* Profile section */
+#profileContainer {
+  margin-top: 20px;
+}
+
+/* Profile image */
+#profileContainer img {
+  border-radius: 50%;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+#profileContainer img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}

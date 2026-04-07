@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>To-do app</title>
+
+  <style>
+    body {
+      background: linear-gradient(to right, #eef2f3, #dfe9f3);
+    }
+
+    h2 {
+      margin-top: 30px;
+    }
+
+    .container {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .completed {
+      text-decoration: line-through;
+      opacity: 0.6;
+    }
+
+    .list-group-item:hover {
+      background-color: #f8f9fa;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2 class="text-center mb-4">To-Do App</h2>
+
+  <div class="container mt-5">
+    <input id="taskInput" class="form-control mb-3" placeholder="Enter your task">
+    <button id="addBtn" class="btn btn-success w-100 mb-3">Add</button>
+    <button id="clearBtn" class="btn btn-danger w-100 mb-3">Delete All</button>
+    <ul id="taskList" class="list-group"></ul>
+  </div>
+
+  <script>
+    let tasks = [];
+
+    const taskInput = document.querySelector("#taskInput");
+    const addBtn = document.querySelector("#addBtn");
+    const taskList = document.querySelector("#taskList");
+    const clearBtn = document.querySelector("#clearBtn");
+
+    const savedTasks = localStorage.getItem("tasks");
+
+    if (savedTasks) {
+      tasks = JSON.parse(savedTasks);
+    }
+
+    function renderTasks() {
+      taskList.innerHTML = "";
+
+      //  Empty message
+      if (tasks.length === 0) {
+        taskList.innerHTML = "<p class='text-center'>No tasks yet</p>";
+        return;
+      }
+
+      tasks.forEach(function (task, index) {
+        const li = document.createElement("li");
+        li.textContent = task;
+        li.className = "list-group-item d-flex justify-content-between";
+
+        li.addEventListener("click", function () {
+          li.classList.toggle("completed");
+        });
+
+        const deleteBtn = document.createElement("button");
+        deleteBtn.textContent = "Delete";
+        deleteBtn.className = "btn btn-danger btn-sm";
+
+        deleteBtn.addEventListener("click", function (e) {
+          e.stopPropagation();
+          tasks.splice(index, 1);
+          localStorage.setItem("tasks", JSON.stringify(tasks));
+          renderTasks();
+        });
+
+        li.appendChild(deleteBtn);
+        taskList.appendChild(li);
+      });
+    }
+
+    renderTasks();
+
+    addBtn.addEventListener("click", function () {
+      const task = taskInput.value.trim();
+
+      if (task === "") {
+        return;
+      }
+
+      tasks.push(task);
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+      renderTasks();
+
+      taskInput.value = "";
+      taskInput.focus();
+    });
+
+    clearBtn.addEventListener("click", function () {
+      tasks = [];
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+      renderTasks();
+    });
+  </script>
+
+</body>
+</html>

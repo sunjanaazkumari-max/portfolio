@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <title>Sanjana Portfolio</title>
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: 'Poppins', sans-serif;
+      transition: background-color 0.4s, color 0.4s;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .dark {
+      background-color: #121212;
+      color: white;
+    }
+
+    h1 {
+      font-weight: 600;
+    }
+
+    p {
+      font-weight: 300;
+    }
+
+    .nav-link:hover {
+      color: #0d6efd;
+    }
+
+    .card {
+      border-radius: 15px;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .dark .card:hover {
+      background-color: #cec8c8;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+
+      <a class="navbar-brand" href="#">Sanjana</a>
+
+      <button id="darkBtn" class="btn btn-light ms-3">Dark Mode</button>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto gap-3">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div id="home" class="container text-center mt-5 mb-5">
+    <h1 class="fw-bold display-5">Hi, I'm Sanjana</h1>
+    <p>I build responsive and interactive websites using HTML, CSS, Bootstrap and JavaScript</p>
+    <button class="btn btn-primary px-4 py-2">Contact Me</button>
+  </div>
+
+
+  <div id="about" class="container mt-5 mb-5 text-center">
+    <h2>About Me</h2>
+    <p>
+      Hi, I’m Sanjana, a frontend developer based in Spain.
+      I enjoy building clean and responsive websites using HTML, CSS, and JavaScript.
+      I like learning new things and turning ideas into real projects
+    </p>
+  </div>
+
+  <!-- SKILLS -->
+  <div id="skills" class="container mt-5 mb-5">
+    <div class="row">
+
+      <div class="col-12 col-md-4 mb-4">
+        <div class="card shadow-sm border-0 p-3">
+          <h5>HTML</h5>
+          <p>Semantic HTML5, forms, accessibility, page structure</p>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-4 mb-4">
+        <div class="card shadow-sm border-0 p-3">
+          <h5>CSS</h5>
+          <p>Flexbox, Grid, responsive design, animations</p>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-4 mb-4">
+        <div class="card shadow-sm border-0 p-3">
+          <h5>Bootstrap</h5>
+          <p>Grid system, responsive layouts, components</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+<!-- PROJECTS -->
+<div id="projects" class="container mt-5 mb-5">
+  <h2 class="text-center mb-4">My Projects</h2>
+
+  <div class="row">
+
+    <!-- Portfolio Website -->
+    <div class="col-12 col-md-6 mb-4">
+      <div class="card p-3 shadow-sm">
+        <h5>Portfolio Website</h5>
+        <p>Responsive website built using HTML, CSS, Bootstrap</p>
+
+        <a href="#home" class="btn btn-primary">
+          View Project
+        </a>
+      </div>
+    </div>
+
+    <!-- GitHub Finder -->
+    <div class="col-12 col-md-6 mb-4">
+      <div class="card p-3 shadow-sm">
+        <h5>GitHub User Finder</h5>
+        <p>Search GitHub profiles using API and display user data dynamically</p>
+
+        <a href="github-user-app/index.html" target="_blank" class="btn btn-primary">
+          View Project
+        </a>
+      </div>
+    </div>
+
+    <!-- To-Do App -->
+    <div class="col-12 col-md-6 mb-4">
+      <div class="card p-3 shadow-sm">
+        <h5>To-Do App</h5>
+        <p>Task manager with add, delete, complete and localStorage</p>
+
+        <a href="todo-app/index.html" target="_blank" class="btn btn-primary">
+          View Project
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+  <!-- CONTACT -->
+  <div id="contact" class="container text-center mt-5 mb-5">
+    <p>Contact me: <a href="mailto:your@email.com">sanjana@email.com</a></p>
+
+    <input type="text" id="nameInput" placeholder="Enter your name" class="form-control mb-3">
+    <button id="submitBtn" class="btn btn-primary">Submit</button>
+
+    <p id="output"></p>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="bg-dark text-white text-center p-3">
+    <p>© 2026 Sanjana | All rights reserved</p>
+  </div>
+
+  <!-- JS -->
+  <script>
+    const darkBtn = document.querySelector("#darkBtn");
+
+    darkBtn.addEventListener("click", function () {
+      document.body.classList.toggle("dark");
+
+      if (document.body.classList.contains("dark")) {
+        darkBtn.textContent = "Light Mode";
+      } else {
+        darkBtn.textContent = "Dark Mode";
+      }
+    });
+
+    const nameInput = document.querySelector("#nameInput");
+    const submitBtn = document.querySelector("#submitBtn");
+    const output = document.querySelector("#output");
+
+    submitBtn.addEventListener("click", function () {
+      const name = nameInput.value.trim();
+
+      if (name === "") {
+        output.textContent = "Please enter your name";
+      } else {
+        output.textContent = "Hello " + name;
+      }
+
+      nameInput.value = "";
+      nameInput.focus();
+    });
+  </script>
+
+
+</body>
+
+</html>
