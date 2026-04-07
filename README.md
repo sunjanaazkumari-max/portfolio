@@ -3,8 +3,7 @@
 This is my personal portfolio website built using HTML, CSS, Bootstrap and JavaScript.
 
 ## Live Demo:
-
-(Add your link here later)
+https://sunjanaazkumari-max.github.io/portfolio/
 
 ## Projects included:
 
