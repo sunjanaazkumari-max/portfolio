@@ -2,15 +2,30 @@
 
 This is my personal portfolio website built using HTML, CSS, Bootstrap and JavaScript.
 
+## Live Demo:
+
+(Add your link here later)
+
 ## Projects included:
-- Portfolio Website
-- To-Do App (with localStorage)
-- GitHub User Finder (using API)
+
+* Portfolio Website
+* To-Do App (with localStorage)
+* GitHub User Finder (using API)
 
 ## Features:
-- Responsive design
-- Dark mode toggle
-- Interactive UI
 
-## About me:
-I am a frontend developer based in Spain, learning and building real projects.
+* Responsive design
+* Dark mode toggle
+* Interactive UI
+
+## Technologies Used:
+
+* HTML
+* CSS
+* Bootstrap
+* JavaScript
+
+## About Me:
+
+I am a frontend developer based in Spain.
+I enjoy building responsive and interactive websites and improving my skills by creating real-world projects.
