@@ -4,128 +4,134 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
   <title>Sanjana Portfolio</title>
-<style>
-  body {
-    background-color: #f8f9fa;
-    font-family: 'Poppins', sans-serif;
-    transition: background-color 0.4s, color 0.4s;
-  }
 
-  html {
-    scroll-behavior: smooth;
-  }
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: 'Poppins', sans-serif;
+      transition: background-color 0.4s, color 0.4s;
+    }
 
-  /* DARK MODE BASE */
-  .dark {
-    background-color: #121212;
-    color: white;
-  }
+    html {
+      scroll-behavior: smooth;
+    }
 
-  h1, h2 {
-    font-weight: 600;
-  }
+    .dark {
+      background-color: #121212;
+      color: white;
+    }
 
-  p {
-    font-weight: 400;
-  }
+    h1,
+    h2 {
+      font-weight: 600;
+    }
 
-  .nav-link:hover {
-    color: #0d6efd;
-  }
+    p {
+      font-weight: 400;
+    }
 
-  :root {
-    --main-color: #6c63ff;
-  }
+    :root {
+      --main-color: #6c63ff;
+    }
 
-  .navbar {
-    background-color: #1a1a1a !important;
-  }
+    .navbar {
+      background-color: #1a1a1a !important;
+    }
 
-  .navbar-brand {
-    color: var(--main-color) !important;
-  }
+    .navbar-brand {
+      color: var(--main-color) !important;
+    }
 
-  /* HERO SECTION */
-  #home {
-    background: linear-gradient(to right, #eef2f3, #dfe9f3);
-    padding: 60px 20px;
-    border-radius: 10px;
-    max-width: 900px;
-    margin: auto;
-  }
+    .nav-link {
+      transition: 0.3s;
+    }
 
-  /* DARK HERO */
-  .dark #home {
-    background: linear-gradient(to right, #1e1e1e, #2c2c2c);
-    color: white;
-  }
+    .nav-link:hover {
+      color: var(--main-color) !important;
+    }
 
-  /* TEXT HIERARCHY FIX */
-  .dark #home h1 {
-    color: #ffffff; /* strong */
-  }
+    #home {
+      background: linear-gradient(to right, #eef2f3, #dfe9f3);
+      padding: 60px 20px;
+      border-radius: 10px;
+      max-width: 900px;
+      margin: auto;
+    }
 
-  .dark #home p {
-    color: #bbbbbb; /* softer */
-  }
+    .dark #home {
+      background: linear-gradient(to right, #1e1e1e, #2c2c2c);
+    }
 
-  /* ABOUT TEXT FIX */
-  #about p {
-    max-width: 700px;
-    margin: auto;
-    line-height: 1.6;
-  }
+    .dark #home h1 {
+      color: white;
+    }
 
-  .dark #about p {
-    color: #b5b5b5; /* softer text */
-  }
+    .dark #home p {
+      color: #bbb;
+    }
 
-  /* CARDS */
-  .card {
-    border-radius: 15px;
-    transition: 0.3s;
-    cursor: pointer;
-  }
+    #about p {
+      max-width: 700px;
+      margin: auto;
+      line-height: 1.6;
+    }
 
-  .card:hover {
-    transform: translateY(-5px);
-  }
+    .dark #about p {
+      color: #b5b5b5;
+    }
 
-  /* DARK CARDS */
-  .dark .card {
-    background-color: #1f1f1f;
-    color: white;
-  }
+    .card {
+      border-radius: 15px;
+      transition: 0.3s;
+      cursor: pointer;
+    }
 
-  .dark .card:hover {
-    background-color: #2a2a2a;
-  }
+    .card:hover {
+      transform: translateY(-5px);
+    }
 
-  /* BUTTON */
-  .btn-primary {
-    background-color: var(--main-color);
-    border: none;
-    border-radius: 30px;
-    transition: 0.3s;
-    color: white;
-  }
+    .dark .card {
+      background-color: #1f1f1f;
+      color: white;
+    }
 
-  .btn-primary:hover {
-    transform: scale(1.05);
-    background-color: #574fd6;
-    box-shadow: 0 0 8px rgba(108, 99, 255, 0.4);
-  }
-</style>
+    .dark .card:hover {
+      background-color: #2a2a2a;
+    }
+
+    .card a {
+      margin-top: 10px;
+    }
+
+    .btn-primary {
+      background-color: var(--main-color);
+      border: none;
+      border-radius: 30px;
+      transition: 0.3s;
+    }
+
+    .btn-primary:hover {
+      transform: scale(1.05);
+      background-color: #574fd6;
+    }
+
+    section {
+      margin-top: 60px;
+    }
+  </style>
 </head>
 
 <body>
 
   <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
 
       <a class="navbar-brand" href="#">Sanjana</a>
@@ -138,10 +144,19 @@
 
       <div class="collapse navbar-collapse" id="menu">
         <ul class="navbar-nav ms-auto gap-3">
-          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
           <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+
+          <!-- GitHub link added -->
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/sunjanaazkumari-max" target="_blank">
+              GitHub
+            </a>
+          </li>
+
         </ul>
       </div>
 
@@ -150,18 +165,20 @@
 
   <!-- HERO -->
   <div id="home" class="container text-center mt-5 mb-5">
-    <h1 class="fw-bold display-5">Hi, I'm Sanjana</h1>
+    <h1 class="display-5">Hi, I'm Sanjana</h1>
     <p>I build responsive and interactive websites using HTML, CSS, Bootstrap and JavaScript</p>
-    <button class="btn btn-primary px-4 py-2">Contact Me</button>
+
+    <!-- FIXED BUTTON -->
+    <a href="#contact" class="btn btn-primary px-4 py-2">Contact Me</a>
   </div>
 
-
-  <div id="about" class="container mt-5 mb-5 text-center">
+  <!-- ABOUT -->
+  <div id="about" class="container text-center mt-5 mb-5">
     <h2>About Me</h2>
     <p>
       Hi, I’m Sanjana, a frontend developer based in Spain.
       I enjoy building clean and responsive websites using HTML, CSS, and JavaScript.
-      I like learning new things and turning ideas into real projects
+      I like learning new things and turning ideas into real projects.
     </p>
   </div>
 
@@ -169,22 +186,22 @@
   <div id="skills" class="container mt-5 mb-5">
     <div class="row">
 
-      <div class="col-12 col-md-4 mb-4">
-        <div class="card shadow-sm border-0 p-3">
+      <div class="col-md-4 mb-4">
+        <div class="card p-3 shadow-sm">
           <h5>HTML</h5>
           <p>Semantic HTML5, forms, accessibility, page structure</p>
         </div>
       </div>
 
-      <div class="col-12 col-md-4 mb-4">
-        <div class="card shadow-sm border-0 p-3">
+      <div class="col-md-4 mb-4">
+        <div class="card p-3 shadow-sm">
           <h5>CSS</h5>
           <p>Flexbox, Grid, responsive design, animations</p>
         </div>
       </div>
 
-      <div class="col-12 col-md-4 mb-4">
-        <div class="card shadow-sm border-0 p-3">
+      <div class="col-md-4 mb-4">
+        <div class="card p-3 shadow-sm">
           <h5>Bootstrap</h5>
           <p>Grid system, responsive layouts, components</p>
         </div>
@@ -199,39 +216,27 @@
 
     <div class="row">
 
-      <!-- Portfolio Website -->
-      <div class="col-12 col-md-6 mb-4">
+      <div class="col-md-6 mb-4">
         <div class="card p-3 shadow-sm">
           <h5>Portfolio Website</h5>
           <p>Responsive website built using HTML, CSS, Bootstrap</p>
-
-          <a href="#home" class="btn btn-primary">
-            View Project
-          </a>
+          <a href="#home" class="btn btn-primary">View Project</a>
         </div>
       </div>
 
-      <!-- GitHub Finder -->
-      <div class="col-12 col-md-6 mb-4">
+      <div class="col-md-6 mb-4">
         <div class="card p-3 shadow-sm">
           <h5>GitHub User Finder</h5>
           <p>Search GitHub profiles using API and display user data dynamically</p>
-
-          <a href="github-user-app/index.html" target="_blank" class="btn btn-primary">
-            View Project
-          </a>
+          <a href="github-user-app/index.html" target="_blank" class="btn btn-primary">View Project</a>
         </div>
       </div>
 
-      <!-- To-Do App -->
-      <div class="col-12 col-md-6 mb-4">
+      <div class="col-md-6 mb-4">
         <div class="card p-3 shadow-sm">
           <h5>To-Do App</h5>
           <p>Task manager with add, delete, complete and localStorage</p>
-
-          <a href="todo-app/index.html" target="_blank" class="btn btn-primary">
-            View Project
-          </a>
+          <a href="todo-app/index.html" target="_blank" class="btn btn-primary">View Project</a>
         </div>
       </div>
 
@@ -240,7 +245,7 @@
 
   <!-- CONTACT -->
   <div id="contact" class="container text-center mt-5 mb-5">
-    <p>Contact me: <a href="mailto:your@email.com">sanjana@email.com</a></p>
+    <p>Contact me: <a href="mailto:sanjana@email.com">sanjana@email.com</a></p>
 
     <input type="text" id="nameInput" placeholder="Enter your name" class="form-control mb-3">
     <button id="submitBtn" class="btn btn-primary">Submit</button>
@@ -284,7 +289,6 @@
       nameInput.focus();
     });
   </script>
-
 
 </body>
 
