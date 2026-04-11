@@ -1,41 +1,40 @@
-/* Reset default spacing */
+/* RESET + BASE */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', Arial, sans-serif;
 
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
 
   background-color: #f4f4f4;
 }
-
 
 h1 {
   margin-bottom: 20px;
 }
 
 
-/* Main container (card) */
+/* MAIN CONTAINER */
 .container {
   background-color: white;
   padding: 30px;
-  border-radius: 10px;
-  box-sizing: border-box;
+  border-radius: 12px;
 
-  max-width: 400px;
+  max-width: 420px;
   width: 100%;
 
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
-/* Input + button */
+
+/* INPUT + BUTTON */
 input {
   padding: 12px;
   width: 65%;
-  border-radius: 5px;
+  border-radius: 6px;
   border: 1px solid #ccc;
 }
 
@@ -46,14 +45,13 @@ input:focus {
 
 button {
   padding: 12px;
-  border-radius: 5px;
+  border-radius: 6px;
   border: none;
 
   background-color: #007bff;
   color: white;
   cursor: pointer;
 
-  margin-left: 10px;
   transition: all 0.2s ease;
 }
 
@@ -63,12 +61,21 @@ button:hover {
 }
 
 
-/* Profile section */
+/* PROFILE SECTION */
 #profileContainer {
   margin-top: 20px;
 }
 
-/* Profile image */
+
+/* PROFILE CARD */
+.profile-card {
+  margin-top: 20px;
+  animation: fadeIn 0.4s ease;
+  transition: all 0.3s ease;
+}
+
+
+/* PROFILE IMAGE */
 #profileContainer img {
   border-radius: 50%;
   margin-bottom: 10px;
@@ -79,4 +86,79 @@ button:hover {
 #profileContainer img:hover {
   transform: scale(1.1);
   box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+
+/* INFO ROW */
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+
+/* INFO BOXES */
+.info-box {
+  background: #f4f4f4;
+  padding: 12px;
+  border-radius: 10px;
+  width: 100%;
+
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.info-box p {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.info-box strong {
+  font-size: 16px;
+}
+
+
+/* BIO TEXT */
+.bio {
+  font-style: italic;
+  margin-top: 10px;
+  color: #555;
+}
+
+
+/* PROFILE BUTTON */
+.profile-card button {
+  margin-top: 15px;
+  background-color: #6c63ff;
+}
+
+.profile-card button:hover {
+  background-color: #574fd6;
+}
+
+
+/* ANIMATION */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 500px) {
+  .info-row {
+    flex-direction: column;
+  }
+
+  input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
 }
